@@ -6,13 +6,13 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:16:34 by cstoia            #+#    #+#             */
-/*   Updated: 2024/03/14 19:02:46 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/03 15:37:57 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int *content)
 {
 	t_list	*new;
 

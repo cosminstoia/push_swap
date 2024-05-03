@@ -6,7 +6,7 @@
 #    By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 15:27:22 by cstoia            #+#    #+#              #
-#    Updated: 2024/05/03 01:18:06 by cstoia           ###   ########.fr        #
+#    Updated: 2024/05/03 15:07:53 by cstoia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,10 @@ LIBFT_DIR = libft
 # Libraries and source files (Do not use "*.c", because of the norm!!)
 LIBFT = $(LIBFT_DIR)/libft.a
 SOURCES = 	$(SOURCE)/main.c \
-			$(SOURCE)/list_function.c
+			$(SOURCE)/list_function.c \
+			$(SOURCE)/swap.c \
+			$(SOURCE)/push.c \
+			$(SOURCE)/rotate.c
 OBJECTS = $(SOURCES:%.c=$(OBJ_DIR)/%.o)
 HEADER = $(SOURCE)/pus_swap.h
 

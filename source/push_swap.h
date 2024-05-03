@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:08:43 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/03 01:42:02 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/03 15:06:30 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@
 # include "../libft/libft.h"
 # include <stdlib.h>
 
-typedef struct s_stack_a
-{
-	int					data;
-	struct s_stack_a	*next;
-}						t_stack_a;
-
-t_stack_a				*ft_newlst(int data);
-void					ft_printlst(t_stack_a *head);
-t_stack_a				*ft_addlst_back(t_stack_a **node, t_stack_a *new_node);
+void	ft_printlst(t_list *head);
+// Functions to move the values
+void	swap(t_list **stack);
+void	sa(t_list **stack_a);
+void	sb(t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b);
+void	pa(t_list **stack_a, t_list **stack_b);
+void	pb(t_list **stack_a, t_list **stack_b);
+void	rotate(t_list **stack);
+void	ra(t_list **stack_a);
+void	rb(t_list **stack_b);
+void	rr(t_list **stack_a, t_list **stack_b);
 
 #endif

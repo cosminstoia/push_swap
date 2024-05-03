@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:08:47 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/03 02:20:36 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/03 15:10:18 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	int			i;
-	t_stack_a	*stack_a;
+	int		i;
+	t_list	*stack_a;
 
 	stack_a = NULL;
 	i = 1;
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 				ft_printf("Error\n");
 				return (1);
 			}
-			ft_addlst_back(&stack_a, ft_newlst(ft_atoi(argv[i])));
+			ft_lstadd_back(&stack_a, ft_lstnew((ft_atoi(argv[i]))));
 			i++;
 		}
 		ft_printlst(stack_a);
