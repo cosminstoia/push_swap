@@ -6,12 +6,14 @@
 #    By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 15:27:22 by cstoia            #+#    #+#              #
-#    Updated: 2024/05/03 15:07:53 by cstoia           ###   ########.fr        #
+#    Updated: 2024/05/03 21:15:30 by cstoia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Name of the project
 NAME = push_swap
+
+CC = cc
 
 # Flags
 CFLAGS = -Wall -Wextra -Werror
@@ -20,25 +22,27 @@ CFLAGS = -Wall -Wextra -Werror
 SRC_DIR = source
 OBJ_DIR = objects
 LIBFT_DIR = libft
+HEADER = $(SRC_DIR)/push_swap.h
 
-# Libraries and source files (Do not use "*.c", because of the norm!!)
+SOURCES =	\
+			main.c \
+			list_function.c \
+			swap.c \
+			push.c \
+			rotate.c \
+			reverse.c
+
 LIBFT = $(LIBFT_DIR)/libft.a
-SOURCES = 	$(SOURCE)/main.c \
-			$(SOURCE)/list_function.c \
-			$(SOURCE)/swap.c \
-			$(SOURCE)/push.c \
-			$(SOURCE)/rotate.c
 OBJECTS = $(SOURCES:%.c=$(OBJ_DIR)/%.o)
-HEADER = $(SOURCE)/pus_swap.h
 
 # Headers
-HEADERS := -I $(HEADER) -I $(LIBFT_DIR)
+HEADERS := -I $(SRC_DIR) -I $(LIBFT_DIR)
 
 all: $(NAME)
 	@echo "$(NAME) built successfully!"
 
-# Build the project using MLX and libft libraries
-$(NAME): $(OBJECTS) $(LIBFT)
+# Build the project using libft library
+$(NAME):  $(OBJECTS) $(LIBFT)
 	@$(CC) $(CFLAGS) $(OBJECTS) -o $@ $(LIBFT)
 
 # Compile source files into object files
@@ -66,5 +70,3 @@ fclean: clean
 
 # Clean and rebuild project rule
 re: fclean all
-
-.PHONY: all clean fclean re mlx
