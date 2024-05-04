@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:41:49 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/03 15:49:18 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/04 23:45:40 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	reverse_rotate(t_list **stack)
 		*stack = last;
 	}
 }
+
 // Perform reverse rotation of stack a
 void	rra(t_list **stack_a)
 {

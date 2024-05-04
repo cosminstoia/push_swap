@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/08 17:21:50 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/05 00:17:04 by cstoia           ###   ########.fr       */
+/*   Created: 2024/05/04 23:31:44 by cstoia            #+#    #+#             */
+/*   Updated: 2024/05/04 23:44:55 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-long	ft_atoi(const char *str)
+void	ft_error_output(void)
 {
-	int		i;
-	int		sign;
-	long	result;
-
-	i = 0;
-	result = 0;
-	sign = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-		{
-			sign *= -1;
-		}
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	ft_printf("Error\n");
+	exit(EXIT_FAILURE);
 }

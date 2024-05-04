@@ -6,7 +6,7 @@
 #    By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 15:27:22 by cstoia            #+#    #+#              #
-#    Updated: 2024/05/03 21:15:30 by cstoia           ###   ########.fr        #
+#    Updated: 2024/05/04 23:32:02 by cstoia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ SOURCES =	\
 			swap.c \
 			push.c \
 			rotate.c \
-			reverse.c
+			reverse.c \
+			input_checks.c \
+			errors.c
 
 LIBFT = $(LIBFT_DIR)/libft.a
 OBJECTS = $(SOURCES:%.c=$(OBJ_DIR)/%.o)

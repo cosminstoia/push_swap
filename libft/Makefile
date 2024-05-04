@@ -6,7 +6,7 @@
 #    By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 21:00:23 by cstoia            #+#    #+#              #
-#    Updated: 2024/05/03 21:04:24 by cstoia           ###   ########.fr        #
+#    Updated: 2024/05/05 00:33:12 by cstoia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ FT_PRINTF = \
 				$(FT_PRINTF_DIR)/ft_putx.c \
 				$(FT_PRINTF_DIR)/ft_putxxx.c
 
-
 CFILES = \
 		./ft_atoi.c \
 		./ft_isdigit.c \
@@ -35,14 +34,15 @@ CFILES = \
 		./ft_lstadd_front.c \
 		./ft_lstclear.c \
 		./ft_lstlast.c \
-		./ft_lstnew.c
+		./ft_lstnew.c \
+		./ft_split.c \
+		./ft_strlen.c \
+		./ft_substr.c \
+		./ft_strdup.c 
 
 OBJECTS = \
 		$(CFILES:%.c=%.o) \
 		$(FT_PRINTF:$(FT_PRINTF_DIR)/%.c=$(FT_PRINTF_DIR)/%.o) \
-
-
-
 
 all: $(NAME)
 
