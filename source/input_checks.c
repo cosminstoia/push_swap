@@ -6,13 +6,14 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:08:13 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/05 00:33:37 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/05 00:46:11 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_check_for_doubles_and_max_int(t_list *stack_a, char *argv)
+// Checks for MAX_INT and MIN_INT and for doubles
+void	ft_check_int(t_list *stack_a, char *argv)
 {
 	long	num;
 	int		count;
@@ -33,6 +34,7 @@ void	ft_check_for_doubles_and_max_int(t_list *stack_a, char *argv)
 	}
 }
 
+// Checks for each number and if it is valid is added to the list
 void	ft_check_input_and_add_to_list(char **argv, t_list *stack_a, int flag)
 {
 	int	i;
@@ -55,7 +57,7 @@ void	ft_check_input_and_add_to_list(char **argv, t_list *stack_a, int flag)
 				ft_error_output();
 			j++;
 		}
-		ft_check_for_doubles_and_max_int(stack_a, argv[i]);
+		ft_check_int(stack_a, argv[i]);
 		ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
