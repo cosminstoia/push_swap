@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:28:05 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/05 00:32:24 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/06 16:17:53 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 typedef struct s_list
 {
 	int				content;
+	struct t_list	*max_node;
+	struct s_list	*target_node;
 	struct s_list	*next;
 }					t_list;
 
@@ -35,5 +37,6 @@ char				*ft_strncpy(char *s1, char *s2, int n);
 char				**ft_split(char const *s, char c);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strdup(const char *s1);
+int					ft_lstsize(t_list *lst);
 
 #endif

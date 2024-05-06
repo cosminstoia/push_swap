@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:08:13 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/05 00:46:11 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/06 16:35:28 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,21 @@ void	ft_check_int(t_list *stack_a, char *argv)
 	}
 }
 
+int	ft_check_is_sorted(t_list *stack_a)
+{
+	if (!stack_a)
+		return (1);
+	while (stack_a->next)
+	{
+		if (stack_a->content > stack_a->next->content)
+			return (0);
+		stack_a = stack_a->next;
+	}
+	return (1);
+}
+
 // Checks for each number and if it is valid is added to the list
-void	ft_check_input_and_add_to_list(char **argv, t_list *stack_a, int flag)
+void	ft_check_input_and_add_to_list(char **argv, t_list **stack_a, int flag)
 {
 	int	i;
 	int	j;
@@ -43,7 +56,6 @@ void	ft_check_input_and_add_to_list(char **argv, t_list *stack_a, int flag)
 	i = 0;
 	if (flag == 1)
 		i = 1;
-	j = 0;
 	while (argv[i])
 	{
 		j = 0;
@@ -57,9 +69,8 @@ void	ft_check_input_and_add_to_list(char **argv, t_list *stack_a, int flag)
 				ft_error_output();
 			j++;
 		}
-		ft_check_int(stack_a, argv[i]);
-		ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(argv[i])));
+		ft_check_int(*stack_a, argv[i]);
+		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
-	ft_printlst(stack_a);
 }

@@ -6,14 +6,14 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:00:24 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/03 15:08:05 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/06 16:22:06 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Rotate the stack by shifting all elements by 1
-void	rotate(t_list **stack)
+void	ft_rotate(t_list **stack)
 {
 	t_list	*last;
 	t_list	*second_last;
@@ -33,20 +33,20 @@ void	rotate(t_list **stack)
 }
 
 // Rotate stack a
-void	ra(t_list **stack_a)
+void	ft_ra(t_list **stack_a)
 {
-	rotate(stack_a);
+	ft_rotate(stack_a);
 }
 
 // Rotate stack b
-void	rb(t_list **stack_b)
+void	ft_rb(t_list **stack_b)
 {
-	rotate(stack_b);
+	ft_rotate(stack_b);
 }
 
 // Rotate both stacks
-void	rr(t_list **stack_a, t_list **stack_b)
+void	ft_rr(t_list **stack_a, t_list **stack_b)
 {
-	rotate(stack_a);
-	rotate(stack_b);
+	ft_rotate(stack_a);
+	ft_rotate(stack_b);
 }

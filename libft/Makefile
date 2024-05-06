@@ -6,7 +6,7 @@
 #    By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 21:00:23 by cstoia            #+#    #+#              #
-#    Updated: 2024/05/05 00:33:12 by cstoia           ###   ########.fr        #
+#    Updated: 2024/05/05 23:30:36 by cstoia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ CFILES = \
 		./ft_split.c \
 		./ft_strlen.c \
 		./ft_substr.c \
-		./ft_strdup.c 
+		./ft_strdup.c \
+		./ft_lstsize.c
 
 OBJECTS = \
 		$(CFILES:%.c=%.o) \
