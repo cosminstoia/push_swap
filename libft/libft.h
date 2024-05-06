@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:28:05 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/06 16:17:53 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/07 00:08:43 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 typedef struct s_list
 {
 	int				content;
-	struct t_list	*max_node;
+	int				index;
+	int				median;
 	struct s_list	*target_node;
 	struct s_list	*next;
 }					t_list;
