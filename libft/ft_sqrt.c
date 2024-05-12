@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_three.c                                    :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 16:55:21 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/06 16:55:37 by cstoia           ###   ########.fr       */
+/*   Created: 2024/05/11 16:53:51 by cstoia            #+#    #+#             */
+/*   Updated: 2024/05/11 17:03:24 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_sort_three(t_list **stack)
+int	ft_sqrt(int nbr)
 {
-	t_list	*max_node;
+	int	i;
 
-	max_node = ft_find_max_node(*stack);
-	if (max_node == *stack)
-		ft_ra(stack);
-	else if ((*stack)->next == max_node)
-		ft_rra(stack);
-	if ((*stack)->content > (*stack)->next->content)
-		ft_sa(stack);
+	i = 0;
+	if (nbr < 4)
+		return (1);
+	while (i * i <= nbr)
+	{
+		if (i * i == nbr)
+			return (i);
+		i++;
+	}
+	return (i - 1);
 }

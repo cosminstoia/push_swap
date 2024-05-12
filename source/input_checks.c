@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:08:13 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/06 16:35:28 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/12 20:15:52 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	ft_check_int(t_list *stack_a, char *argv)
 	}
 }
 
-int	ft_check_is_sorted(t_list *stack_a)
+// Checks if the list is sorted
+int	ft_check_if_sorted(t_list *stack_a)
 {
 	if (!stack_a)
 		return (1);

@@ -6,7 +6,7 @@
 #    By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 15:27:22 by cstoia            #+#    #+#              #
-#    Updated: 2024/05/06 16:56:19 by cstoia           ###   ########.fr        #
+#    Updated: 2024/05/12 20:23:27 by cstoia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,14 +26,10 @@ HEADER = $(SRC_DIR)/push_swap.h
 
 SOURCES =	\
 			main.c \
-			list_functions.c \
-			swap.c \
-			push.c \
-			rotate.c \
-			reverse.c \
+			utils.c \
+			operations.c \
 			input_checks.c \
-			errors.c \
-			sort_three.c
+			sort_stack.c
 
 LIBFT = $(LIBFT_DIR)/libft.a
 OBJECTS = $(SOURCES:%.c=$(OBJ_DIR)/%.o)

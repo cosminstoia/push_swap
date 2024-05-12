@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:28:05 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/07 00:08:43 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/11 16:58:30 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ typedef struct s_list
 {
 	int				content;
 	int				index;
-	int				median;
-	struct s_list	*target_node;
 	struct s_list	*next;
 }					t_list;
 
@@ -39,5 +37,6 @@ char				**ft_split(char const *s, char c);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strdup(const char *s1);
 int					ft_lstsize(t_list *lst);
+int					ft_sqrt(int nbr);
 
 #endif
