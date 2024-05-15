@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:08:47 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/12 20:22:18 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/14 18:12:58 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_printlst(t_list *head)
 {
 	while (head != NULL)
 	{
-		ft_printf("%d\n", head->content);
+		ft_printf("%d ", head->content);
 		head = head->next;
 	}
 }
@@ -43,11 +43,6 @@ int	main(int argc, char **argv)
 		ft_check_input_and_add_to_list(argv, &stack_a, 1);
 	else if (argc == 2 && argv[1][0] != ' ')
 		ft_check_input_and_add_to_list(ft_split(argv[1], ' '), &stack_a, 0);
-	ft_find_index(stack_a);
-	ft_printf("Before sort:\n");
-	ft_printlst(stack_a);
 	ft_sort_stack(stack_a);
-	ft_printf("After sort:\n");
-	ft_printlst(stack_a);
 	return (0);
 }

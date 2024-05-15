@@ -6,46 +6,11 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 01:18:09 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/12 20:28:31 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/15 23:05:29 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// Function to find the maximum node in the linked list
-t_list	*ft_find_max_node(t_list *stack)
-{
-	int		max;
-	t_list	*max_node;
-
-	max = stack->content;
-	while (stack)
-	{
-		if (stack->content > max)
-		{
-			max = stack->content;
-			max_node = stack;
-		}
-		stack = stack->next;
-	}
-	return (max_node);
-}
-
-// Function that find the index for each node(element)
-void	ft_find_index(t_list *stack_a)
-{
-	int	i;
-
-	i = 0;
-	if (!stack_a)
-		return ;
-	while (stack_a)
-	{
-		stack_a->index = i;
-		i++;
-		stack_a = stack_a->next;
-	}
-}
 
 // Function that frees all the nodes from the linked list
 void	ft_lstfree(t_list *stack)
@@ -72,4 +37,68 @@ int	ft_distance_to_index(t_list *stack, int index)
 		stack = stack->next;
 	}
 	return (i);
+}
+
+// Function to sort an array
+void	ft_arr_bubble_sort(int *array, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		j = 0;
+		while (j < size - 1 - i)
+		{
+			if (array[j] > array[j + 1])
+			{
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+// Function to find the index
+int	ft_put_index(int stack_content, int *array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i] != stack_content)
+		i++;
+	return (i);
+}
+
+// Put every element in a array, sort it, and assign indexes
+void	ft_find_index(t_list *stack, int size)
+{
+	int		i;
+	int		*array;
+	t_list	*current;
+
+	array = (int *)malloc(size * sizeof(int));
+	if (array == NULL)
+		return ;
+	current = stack;
+	i = 0;
+	while (i < size)
+	{
+		array[i] = current->content;
+		current = current->next;
+		i++;
+	}
+	current = stack;
+	ft_arr_bubble_sort(array, size);
+	while (current)
+	{
+		current->index = ft_put_index(current->content, array);
+		current = current->next;
+	}
+	free(array);
 }

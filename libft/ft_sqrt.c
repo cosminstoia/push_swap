@@ -6,24 +6,20 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 16:53:51 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/11 17:03:24 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/14 15:03:05 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_sqrt(int nbr)
+int	ft_sqrt(int number)
 {
 	int	i;
 
-	i = 0;
-	if (nbr < 4)
+	if (number < 4)
 		return (1);
-	while (i * i <= nbr)
-	{
-		if (i * i == nbr)
-			return (i);
+	i = 2;
+	while (i * i < number)
 		i++;
-	}
 	return (i - 1);
 }
