@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:08:43 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/15 23:03:36 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/15 23:09:30 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int		ft_check_if_sorted(t_list *stack_a);
 // Sorting fucntions
 void	ft_find_index(t_list *stack, int size);
 int		ft_put_index(int stack_content, int *array);
-void	ft_sort_three(t_list *stack);
 void	ft_sort_stack(t_list *stack_a);
 void	ft_lstfree(t_list *stack);
 void	ft_lst_bubble_sort(t_list *stack);

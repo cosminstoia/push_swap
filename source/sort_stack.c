@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:56:36 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/15 23:06:27 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/15 23:21:41 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,12 +118,7 @@ void	ft_sort_stack(t_list *stack_a)
 		{
 			ft_find_index(stack_a, size);
 			ft_k_sort_a_to_b(&stack_a, &stack_b, size);
-			// ft_printf("B:");
-			// ft_printlst(stack_b);
-			// ft_printf("\n");
-			// ft_printf("A:\n");
-			// ft_printlst(stack_a);
-			// ft_k_sort_b_to_a(&stack_a, &stack_b, size);
+			ft_k_sort_b_to_a(&stack_a, &stack_b, size);
 		}
 	}
 }
