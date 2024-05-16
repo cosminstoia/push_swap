@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 01:18:09 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/15 23:05:29 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/16 01:42:59 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	ft_lstfree(t_list *stack)
 {
 	t_list	*temp;
 
-	while (stack != NULL)
+	temp = stack;
+	while (temp)
 	{
-		temp = stack;
-		stack = stack->next;
 		free(temp);
+		temp = temp->next;
 	}
 }
 

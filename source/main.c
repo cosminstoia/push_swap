@@ -6,21 +6,21 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:08:47 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/14 18:12:58 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/16 02:52:22 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Function that prints all the nodes in a linked list
-void	ft_printlst(t_list *head)
-{
-	while (head != NULL)
-	{
-		ft_printf("%d ", head->content);
-		head = head->next;
-	}
-}
+// void	ft_printlst(t_list *head)
+// {
+// 	while (head != NULL)
+// 	{
+// 		ft_printf("%d ", head->content);
+// 		head = head->next;
+// 	}
+// }
 
 // Error handling function
 void	ft_error_output(void)
@@ -44,5 +44,6 @@ int	main(int argc, char **argv)
 	else if (argc == 2 && argv[1][0] != ' ')
 		ft_check_input_and_add_to_list(ft_split(argv[1], ' '), &stack_a, 0);
 	ft_sort_stack(stack_a);
+	system("leaks push_swap");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:08:13 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/12 20:15:52 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/16 00:19:49 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_check_input_and_add_to_list(char **argv, t_list **stack_a, int flag)
 			j++;
 		}
 		ft_check_int(*stack_a, argv[i]);
-		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(argv[i])));
+		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(argv[i]), 0));
 		i++;
 	}
 }

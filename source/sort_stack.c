@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:56:36 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/15 23:21:41 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/16 02:48:05 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void	ft_k_sort_a_to_b(t_list **stack_a, t_list **stack_b, int size)
 	{
 		if ((*stack_a)->index <= i)
 		{
-			ft_push(stack_a, stack_b, 0);
-			ft_rotate(stack_b, 0);
+			ft_push(stack_a, stack_b, 1);
+			ft_rotate(stack_b, 1);
 			i++;
 		}
 		else if ((*stack_a)->index <= i + range)
 		{
-			ft_push(stack_a, stack_b, 0);
+			ft_push(stack_a, stack_b, 1);
 			i++;
 		}
 		else
@@ -72,7 +72,7 @@ void	ft_k_sort_b_to_a(t_list **stack_a, t_list **stack_b, int size)
 	int	end_to_index;
 	int	start_to_index;
 
-	while (stack_a)
+	while (size - 1 >= 0)
 	{
 		start_to_index = ft_distance_to_index(*stack_b, size - 1);
 		end_to_index = (size + 3) - start_to_index;
@@ -80,17 +80,14 @@ void	ft_k_sort_b_to_a(t_list **stack_a, t_list **stack_b, int size)
 		{
 			while ((*stack_b)->index != size - 1)
 				ft_rotate(stack_b, 1);
-			ft_push(stack_b, stack_a, 1);
+			ft_push(stack_b, stack_a, 0);
 			size--;
 		}
 		else
 		{
 			while ((*stack_b)->index != size - 1)
-			{
-				ft_reverse_rotate(stack_b);
-				break ;
-			}
-			ft_push(stack_b, stack_a, 1);
+				ft_reverse_rotate(stack_b, 1);
+			ft_push(stack_b, stack_a, 0);
 			size--;
 		}
 	}
@@ -108,17 +105,14 @@ void	ft_sort_stack(t_list *stack_a)
 	{
 		if (size == 2)
 			ft_swap(&stack_a, 0);
-		else if (size <= 7)
-		{
+		else if (size < 7)
 			ft_lst_bubble_sort(stack_a);
-			ft_printf("After Bubble:\n");
-			ft_printlst(stack_a);
-		}
-		else if (size > 7)
+		else
 		{
 			ft_find_index(stack_a, size);
 			ft_k_sort_a_to_b(&stack_a, &stack_b, size);
 			ft_k_sort_b_to_a(&stack_a, &stack_b, size);
+			ft_lstfree(stack_a);
 		}
 	}
 }
