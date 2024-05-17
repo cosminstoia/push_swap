@@ -6,21 +6,21 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 15:08:47 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/17 03:27:05 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/17 15:59:48 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Function that prints all the nodes in a linked list
-// void	ft_printlst(t_list *head)
-// {
-// 	while (head != NULL)
-// 	{
-// 		ft_printf("%d ", head->content);
-// 		head = head->next;
-// 	}
-// }
+void	ft_printlst(t_list *head)
+{
+	while (head != NULL)
+	{
+		ft_printf("%d ", head->content);
+		head = head->next;
+	}
+}
 
 // Function that frees all the nodes from the linked list
 void	ft_lstfree(t_list *stack)

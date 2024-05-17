@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:56:36 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/17 03:26:38 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/17 15:54:55 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b, int size)
 	{
 		if ((*stack_a)->index == 0 || (*stack_a)->index == 1)
 		{
-			ft_push(stack_a, stack_b, 0);
+			ft_push(stack_a, stack_b, 1);
 			size--;
 		}
 		else
@@ -47,7 +47,7 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b, int size)
 	ft_sort_small(stack_a, 0);
 	while (ft_lstsize(*stack_b) > 0)
 	{
-		ft_push(stack_b, stack_a, 1);
+		ft_push(stack_b, stack_a, 0);
 	}
 	if (!ft_check_if_sorted(*stack_a))
 		ft_swap(stack_a, 0);
