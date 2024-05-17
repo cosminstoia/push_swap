@@ -6,14 +6,14 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:56:36 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/17 02:24:03 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/17 03:26:38 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Function to sort small number of elements
-void	ft_sort_small(t_list **stack)
+void	ft_sort_small(t_list **stack, int x)
 {
 	int	max;
 
@@ -24,25 +24,34 @@ void	ft_sort_small(t_list **stack)
 			ft_rotate(stack, 0);
 		else if ((*stack)->next->index == max)
 			ft_reverse_rotate(stack, 0);
-		if ((*stack)->index > (*stack)->next->index)
+		else
 			ft_swap(stack, 0);
 	}
-	ft_lstfree(*stack);
+	if (x == 1)
+		ft_lstfree(*stack);
 }
 
 // Function that sorts 5 element stack
 void	ft_sort_five(t_list **stack_a, t_list **stack_b, int size)
 {
-	while (size != 3)
+	while (size > 3)
 	{
-		ft_push(stack_a, stack_b, 0);
-		size--;
+		if ((*stack_a)->index == 0 || (*stack_a)->index == 1)
+		{
+			ft_push(stack_a, stack_b, 0);
+			size--;
+		}
+		else
+			ft_rotate(stack_a, 0);
 	}
-	ft_sort_small(stack_a);
-	ft_push(stack_b, stack_a, 0);
-	ft_sort_small(stack_a);
-	ft_push(stack_b, stack_a, 0);
-	ft_sort_small(stack_a);
+	ft_sort_small(stack_a, 0);
+	while (ft_lstsize(*stack_b) > 0)
+	{
+		ft_push(stack_b, stack_a, 1);
+	}
+	if (!ft_check_if_sorted(*stack_a))
+		ft_swap(stack_a, 0);
+	ft_lstfree(*stack_a);
 }
 
 // Moves the elements from stack a to stack b,obtaining the "K" shape
@@ -112,8 +121,8 @@ void	ft_sort_stack(t_list *stack_a)
 		if (size == 2)
 			ft_swap(&stack_a, 0);
 		else if (size == 3)
-			ft_sort_small(&stack_a);
-		else if (size == 5)
+			ft_sort_small(&stack_a, 1);
+		else if (size <= 5)
 			ft_sort_five(&stack_a, &stack_b, size);
 		else
 		{
