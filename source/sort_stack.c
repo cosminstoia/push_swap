@@ -6,38 +6,43 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:56:36 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/16 02:48:05 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/17 02:24:03 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Sort small number of elements
-void	ft_lst_bubble_sort(t_list *stack)
+// Function to sort small number of elements
+void	ft_sort_small(t_list **stack)
 {
-	int		swap;
-	int		temp_content;
-	t_list	*current;
-	t_list	*temp;
+	int	max;
 
-	current = stack;
-	swap = 0;
-	while (current->next != NULL)
+	max = ft_find_max_index(*stack);
+	while (!ft_check_if_sorted(*stack))
 	{
-		temp = current->next;
-		while (temp != NULL)
-		{
-			if (current->content > temp->content)
-			{
-				temp_content = current->content;
-				current->content = temp->content;
-				temp->content = temp_content;
-				swap = 1;
-			}
-			temp = temp->next;
-		}
-		current = current->next;
+		if ((*stack)->index == max)
+			ft_rotate(stack, 0);
+		else if ((*stack)->next->index == max)
+			ft_reverse_rotate(stack, 0);
+		if ((*stack)->index > (*stack)->next->index)
+			ft_swap(stack, 0);
 	}
+	ft_lstfree(*stack);
+}
+
+// Function that sorts 5 element stack
+void	ft_sort_five(t_list **stack_a, t_list **stack_b, int size)
+{
+	while (size != 3)
+	{
+		ft_push(stack_a, stack_b, 0);
+		size--;
+	}
+	ft_sort_small(stack_a);
+	ft_push(stack_b, stack_a, 0);
+	ft_sort_small(stack_a);
+	ft_push(stack_b, stack_a, 0);
+	ft_sort_small(stack_a);
 }
 
 // Moves the elements from stack a to stack b,obtaining the "K" shape
@@ -101,15 +106,17 @@ void	ft_sort_stack(t_list *stack_a)
 
 	stack_b = NULL;
 	size = ft_lstsize(stack_a);
+	ft_find_index(stack_a, size);
 	if (!ft_check_if_sorted(stack_a))
 	{
 		if (size == 2)
 			ft_swap(&stack_a, 0);
-		else if (size < 7)
-			ft_lst_bubble_sort(stack_a);
+		else if (size == 3)
+			ft_sort_small(&stack_a);
+		else if (size == 5)
+			ft_sort_five(&stack_a, &stack_b, size);
 		else
 		{
-			ft_find_index(stack_a, size);
 			ft_k_sort_a_to_b(&stack_a, &stack_b, size);
 			ft_k_sort_b_to_a(&stack_a, &stack_b, size);
 			ft_lstfree(stack_a);

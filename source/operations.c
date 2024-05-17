@@ -6,7 +6,7 @@
 /*   By: cstoia <cstoia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 14:05:26 by cstoia            #+#    #+#             */
-/*   Updated: 2024/05/16 00:25:55 by cstoia           ###   ########.fr       */
+/*   Updated: 2024/05/17 01:54:06 by cstoia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	ft_swap(t_list **stack, int x)
 		ft_printf("sb\n");
 }
 
-// Function that push top element from one stack to the other
+// Function that push top element from stack_a to the stack_b
 void	ft_push(t_list **stack_a, t_list **stack_b, int x)
 {
 	t_list	*temp;
